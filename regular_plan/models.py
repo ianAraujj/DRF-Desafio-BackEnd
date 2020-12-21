@@ -4,8 +4,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class RegularPlan(models.Model):
     cycle_choices = (
-        ("D", "Daily"),
-        ("W", "Weekly")
+        ("Daily", "Daily"),
+        ("Weekly", "Weekly")
     )
 
     type_choices = (
@@ -22,7 +22,7 @@ class RegularPlan(models.Model):
     name = models.CharField(verbose_name="Name_of_the_Plan", max_length=300)
     tar_included = models.BooleanField()
     subscription = models.FloatField(verbose_name="Monthly Subscription")
-    cycle = models.CharField(verbose_name="Cycle", max_length=1, choices=cycle_choices)
+    cycle = models.CharField(verbose_name="Cycle", max_length=10, choices=cycle_choices)
     type = models.CharField(verbose_name="Type", max_length=10, choices=type_choices)
     offer_iva = models.BooleanField()
     off_peak_price = models.FloatField(verbose_name="Off Peak Price")
