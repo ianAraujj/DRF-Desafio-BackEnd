@@ -8,6 +8,6 @@ class RegularPlanSerializer(serializers.ModelSerializer):
     
     def validate(self, data):
 
-        if data['publish'] == False:
+        if data['publish'] == True:
             data['owner'] = None
         return data

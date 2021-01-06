@@ -16,14 +16,14 @@ class RegularPlanPublishTestCase(TestCase):
         insertSeeds()
 
     
-    def test_sucess_route(self):
+    def test_success_route(self):
         url = reverse('publish-true')
 
         response = self.client.get(url, format='json')
 
         self.assertEqual(response.status_code, 200)
 
-    def test_sucess_regular_plan(self):
+    def test_success_regular_plan_count(self):
 
         count_regular_plan = RegularPlan.objects.filter(publish=True).count()
 

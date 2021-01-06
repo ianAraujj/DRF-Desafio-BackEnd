@@ -58,7 +58,6 @@ class RegularPlanView(viewsets.ModelViewSet):
         if queryset.owner == None or queryset.owner.pk != request.user.pk:
             return Response(data={"detail": "Unauthorized User"}, status=status.HTTP_401_UNAUTHORIZED)
 
-        request.data['owner'] = request.user.pk
         post_data = request.data
         serializer = RegularPlanSerializer(queryset, data=post_data)
 

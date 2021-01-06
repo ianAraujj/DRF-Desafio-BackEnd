@@ -16,5 +16,13 @@ urlpatterns = [
 
 urlpatterns = [
     path('publish/', RegularPlanPublishListView.as_view({'get': 'list'}), name='publish-true'),
-    #path('', RegularPlanView.as_view(), name='regular-plan'),
+    
+    path('', RegularPlanView.as_view({
+        'get': 'list',
+        'post': 'create'}), name='regular-plan'),
+    
+    path('<int:pk>/', RegularPlanView.as_view({
+        'put': 'update'
+    }), name='update-regular-plan')
+
 ]

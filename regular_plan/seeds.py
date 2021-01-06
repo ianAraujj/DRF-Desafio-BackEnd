@@ -31,7 +31,7 @@ def insertSeeds():
         peak_price=5,
         unit='min',
         valid=True,
-        publish=True,
+        publish=False,
         vat=90,
         owner=user1
     )
@@ -95,7 +95,7 @@ def insertSeeds():
         peak_price=5,
         unit='min',
         valid=True,
-        publish=True,
+        publish=False,
         vat=20,
         owner=user1
     )
